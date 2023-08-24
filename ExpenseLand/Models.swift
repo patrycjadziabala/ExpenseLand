@@ -7,20 +7,29 @@
 
 import Foundation
 
-struct Category {
+struct Category: Hashable, Identifiable {
     let id: UUID
     let categoryName: String
     let categoryAmount: Double
     let categoryIcon: String
     let categoryColor: String
-    let categoryExpense: String
+    let categoryExpense: [Expense]
 }
 
-struct Expense {
+struct Expense: Hashable, Identifiable {
     let id: UUID
-    let expenseName: String
-    let expenseAmount: String
+    let expenseAmount: Double
     let expenseDate: Date
     let expenseDescription: String
     let expenseCategory: String
+}
+
+enum CategoryName: CaseIterable {
+    case Groceries
+    
+    var stringValue: String {
+        switch self {
+        case .Groceries: return "groceries"
+        }
+    }
 }

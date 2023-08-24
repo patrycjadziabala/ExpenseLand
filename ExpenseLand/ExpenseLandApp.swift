@@ -11,9 +11,13 @@ import SwiftUI
 struct ExpenseLandApp: App {
 //    let persistenceController = PersistenceController.shared
 
+   @ObservedObject var viewModel = MainViewModel()
+    
     var body: some Scene {
         WindowGroup {
-//            ContentView()
+            MainView()
+                .environmentObject(viewModel)
+
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

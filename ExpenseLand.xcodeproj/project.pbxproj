@@ -13,6 +13,10 @@
 		46BD285C2A9766FC00BBED6B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD285B2A9766FC00BBED6B /* Persistence.swift */; };
 		46BD285F2A9766FC00BBED6B /* ExpenseLand.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46BD285D2A9766FC00BBED6B /* ExpenseLand.xcdatamodeld */; };
 		46BD28682A976A9D00BBED6B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28672A976A9D00BBED6B /* Models.swift */; };
+		46BD286B2A976C2D00BBED6B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD286A2A976C2D00BBED6B /* MainView.swift */; };
+		46BD286D2A976C8600BBED6B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD286C2A976C8600BBED6B /* MainViewModel.swift */; };
+		46BD28702A976CAD00BBED6B /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD286F2A976CAD00BBED6B /* GlobalConstants.swift */; };
+		46BD28722A97714D00BBED6B /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28712A97714D00BBED6B /* AddExpenseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,10 @@
 		46BD285B2A9766FC00BBED6B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		46BD285E2A9766FC00BBED6B /* ExpenseLand.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseLand.xcdatamodel; sourceTree = "<group>"; };
 		46BD28672A976A9D00BBED6B /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		46BD286A2A976C2D00BBED6B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		46BD286C2A976C8600BBED6B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		46BD286F2A976CAD00BBED6B /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		46BD28712A97714D00BBED6B /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +63,11 @@
 		46BD28512A9766FB00BBED6B /* ExpenseLand */ = {
 			isa = PBXGroup;
 			children = (
+				46BD28732A97786B00BBED6B /* DataBase */,
+				46BD286E2A976C9D00BBED6B /* Utilities */,
+				46BD28692A976C1D00BBED6B /* Views */,
 				46BD28522A9766FB00BBED6B /* ExpenseLandApp.swift */,
 				46BD28562A9766FC00BBED6B /* Assets.xcassets */,
-				46BD285B2A9766FC00BBED6B /* Persistence.swift */,
-				46BD285D2A9766FC00BBED6B /* ExpenseLand.xcdatamodeld */,
 				46BD28582A9766FC00BBED6B /* Preview Content */,
 				46BD28672A976A9D00BBED6B /* Models.swift */,
 			);
@@ -71,6 +80,33 @@
 				46BD28592A9766FC00BBED6B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		46BD28692A976C1D00BBED6B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46BD286A2A976C2D00BBED6B /* MainView.swift */,
+				46BD286C2A976C8600BBED6B /* MainViewModel.swift */,
+				46BD28712A97714D00BBED6B /* AddExpenseView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		46BD286E2A976C9D00BBED6B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				46BD286F2A976CAD00BBED6B /* GlobalConstants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		46BD28732A97786B00BBED6B /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				46BD285D2A9766FC00BBED6B /* ExpenseLand.xcdatamodeld */,
+				46BD285B2A9766FC00BBED6B /* Persistence.swift */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +182,11 @@
 				46BD285C2A9766FC00BBED6B /* Persistence.swift in Sources */,
 				46BD28532A9766FB00BBED6B /* ExpenseLandApp.swift in Sources */,
 				46BD285F2A9766FC00BBED6B /* ExpenseLand.xcdatamodeld in Sources */,
+				46BD28722A97714D00BBED6B /* AddExpenseView.swift in Sources */,
+				46BD286B2A976C2D00BBED6B /* MainView.swift in Sources */,
+				46BD28702A976CAD00BBED6B /* GlobalConstants.swift in Sources */,
 				46BD28682A976A9D00BBED6B /* Models.swift in Sources */,
+				46BD286D2A976C8600BBED6B /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

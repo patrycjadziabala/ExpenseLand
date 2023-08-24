@@ -12,7 +12,6 @@
         <attribute name="expenseCategory" optional="YES" attributeType="String"/>
         <attribute name="expenseDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="expenseDescription" optional="YES" attributeType="String"/>
-        <attribute name="expenseName" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
 </model>
