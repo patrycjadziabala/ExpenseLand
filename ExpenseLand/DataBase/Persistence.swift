@@ -61,6 +61,16 @@ extension PersistenceController {
         
         save()
     }
+    
+    func saveCategory(amount: Double, color: String, name: String, icon: String) {
+        let category = DBCategory(context: viewContext)
+        category.id = UUID()
+        category.categoryAmount = amount
+        category.categoryName = name
+        category.categoryIcon = icon
+        
+        save()
+    }
 }
 
 // MARK: - Fetch data

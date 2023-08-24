@@ -9,16 +9,18 @@ import SwiftUI
 
 @main
 struct ExpenseLandApp: App {
-//    let persistenceController = PersistenceController.shared
 
    @ObservedObject var viewModel = MainViewModel()
     
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .environmentObject(viewModel)
-
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            if viewModel.shouldPresentWelcomeScreen == true {
+                WelcomeView()
+                    .environmentObject(viewModel)
+            } else {
+                MainView()
+                    .environmentObject(viewModel)
+            }
         }
     }
 }
