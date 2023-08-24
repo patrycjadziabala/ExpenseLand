@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "E397EB24-A3FE-4639-830B-47013F146940"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04936BCA-E03C-49CA-B08D-86C71D5D37D4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExpenseLand/Views/WelcomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "290372CD-4671-41A2-9F30-5AF81B62083B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExpenseLand/Views/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "saveBaseCategoriesOnFirstLaunch(groceries:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "290372CD-4671-41A2-9F30-5AF81B62083B - 7b2da245eb72f089"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ExpenseLand.MainViewModel.saveBaseCategoriesOnFirstLaunch() -&gt; ()"
+                  moduleName = "ExpenseLand"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patka/Desktop/ExpenseLand/ExpenseLand/Views/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "290372CD-4671-41A2-9F30-5AF81B62083B - 7b2da245eb72f368"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ExpenseLand.MainViewModel.saveBaseCategoriesOnFirstLaunch() -&gt; ()"
+                  moduleName = "ExpenseLand"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patka/Desktop/ExpenseLand/ExpenseLand/Views/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "290372CD-4671-41A2-9F30-5AF81B62083B - a78ae1ad51480ae2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ExpenseLand.MainViewModel.saveBaseCategoriesOnFirstLaunch(groceries: Swift.Double) -&gt; ()"
+                  moduleName = "ExpenseLand"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patka/Desktop/ExpenseLand/ExpenseLand/Views/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "602C012D-1E9A-4CD4-B4EE-7EC3F203C265"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExpenseLand/Views/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "saveBaseCategoriesOnFirstLaunch(groceries:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "602C012D-1E9A-4CD4-B4EE-7EC3F203C265 - 7b2da245eb72f1fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ExpenseLand.MainViewModel.saveBaseCategoriesOnFirstLaunch() -&gt; ()"
+                  moduleName = "ExpenseLand"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patka/Desktop/ExpenseLand/ExpenseLand/Views/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1056">
+               </Location>
+               <Location
+                  uuid = "602C012D-1E9A-4CD4-B4EE-7EC3F203C265 - 7b2da245eb72f1d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ExpenseLand.MainViewModel.saveBaseCategoriesOnFirstLaunch() -&gt; ()"
+                  moduleName = "ExpenseLand"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patka/Desktop/ExpenseLand/ExpenseLand/Views/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "1056">
+               </Location>
+               <Location
+                  uuid = "602C012D-1E9A-4CD4-B4EE-7EC3F203C265 - a78ae1ad51480897"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ExpenseLand.MainViewModel.saveBaseCategoriesOnFirstLaunch(groceries: Swift.Double) -&gt; ()"
+                  moduleName = "ExpenseLand"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patka/Desktop/ExpenseLand/ExpenseLand/Views/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "512">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D23C268-70F6-4280-B485-3DD6EBA66BFB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExpenseLand/Views/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "setCategoryBudgets()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5D23C268-70F6-4280-B485-3DD6EBA66BFB - fb9a1663e73107be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ExpenseLand.MainViewModel.shouldPresentWelcomeView() -&gt; Swift.Bool"
+                  moduleName = "ExpenseLand"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patka/Desktop/ExpenseLand/ExpenseLand/Views/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "5D23C268-70F6-4280-B485-3DD6EBA66BFB - fb9a1663e7310799"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ExpenseLand.MainViewModel.shouldPresentWelcomeView() -&gt; Swift.Bool"
+                  moduleName = "ExpenseLand"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patka/Desktop/ExpenseLand/ExpenseLand/Views/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "5D23C268-70F6-4280-B485-3DD6EBA66BFB - fb9a1663e731085f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ExpenseLand.MainViewModel.shouldPresentWelcomeView() -&gt; Swift.Bool"
+                  moduleName = "ExpenseLand"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patka/Desktop/ExpenseLand/ExpenseLand/Views/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

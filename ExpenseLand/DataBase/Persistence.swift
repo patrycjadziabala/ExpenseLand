@@ -91,5 +91,26 @@ extension PersistenceController {
         }
         return expenses
     }
+    
+    func fetchCategory(categoryName: String) -> [DBCategory] {
+        let request = NSFetchRequest<DBCategory>(entityName: "DBCategory")
+        request.predicate = NSPredicate(format: "name LIKE %@", categoryName)
+        
+        do {
+            let category = try viewContext.fetch(request)
+            return category
+        } catch {
+            print("Error fetching Base Category \(error.localizedDescription)")
+        }
+        return [DBCategory(context: viewContext)]
+    }
+    
+    func saveCategoryAmount(category: String, amount: Double) {
+        guard let category = fetchCategory(categoryName: category).first else {
+            return
+        }
+        category.categoryAmount = amount
+        save()
+    }
 }
 

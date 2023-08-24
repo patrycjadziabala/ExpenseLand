@@ -30,11 +30,10 @@ struct WelcomeView: View {
             }
             .padding()
             Button {
-                
+                viewModel.saveBaseCategoriesOnFirstLaunch(groceries: 0)
             } label: {
                 Text("Enter")
             }
-
         }
     }
 }

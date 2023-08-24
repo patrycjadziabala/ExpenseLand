@@ -14,7 +14,6 @@ final class MainViewModel: ObservableObject {
     
     init() {
        shouldPresentWelcomeScreen = shouldPresentWelcomeView()
-        saveBaseCategoriesOnFirstLaunch()
     }
     
     func saveExpense(description: String, amount: Double, date: Date, category: String) {
@@ -22,24 +21,28 @@ final class MainViewModel: ObservableObject {
         print(persistanceController.fetchExpenses())
     }
     
-    func saveBaseCategoriesOnFirstLaunch() {
-        guard shouldPresentWelcomeScreen == false else {
+    func saveBaseCategoriesOnFirstLaunch(groceries: Double) {
+        guard shouldPresentWelcomeScreen == true else {
             return
         }
-       let baseCategories: [Category] = [Category(id: UUID(), categoryName: "Groceries", categoryAmount: 0, categoryIcon: "home.fill", categoryColor: "red", categoryExpense: [])]
         
-        for category in baseCategories {
-            persistanceController.saveCategory(amount: category.categoryAmount, color: category.categoryColor, name: category.categoryName, icon: category.categoryIcon)
+        for category in CategoryName.allCases {
+            switch category {
+            case .Groceries:
+                persistanceController.saveCategory(amount: groceries, color: "red", name: category.stringValue, icon: "home.fill")
+            }
         }
         
         UserDefaults.standard.set(true, forKey: "BaseCategoriesAlreadySaved")
+        
+        shouldPresentWelcomeScreen = false
     }
-    
+
     func shouldPresentWelcomeView() -> Bool {
-        if UserDefaults.standard.bool(forKey: "BaseCategoriesAlreadySaved") == true {
-           return false
+        if UserDefaults.standard.object(forKey: "BaseCategoriesAlreadySaved") == nil {
+         return true
         } else {
-           return true
+            return false
         }
     }
 }

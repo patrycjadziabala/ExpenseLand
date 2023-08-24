@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct ExpenseLandApp: App {
 
-   @ObservedObject var viewModel = MainViewModel()
+   @StateObject var viewModel = MainViewModel()
     
     var body: some Scene {
         WindowGroup {
