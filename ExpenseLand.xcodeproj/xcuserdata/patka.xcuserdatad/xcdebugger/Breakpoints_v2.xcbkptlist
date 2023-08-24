@@ -14,8 +14,8 @@
             filePath = "ExpenseLand/Views/WelcomeView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -93,9 +93,9 @@
             filePath = "ExpenseLand/Views/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "saveBaseCategoriesOnFirstLaunch(groceries:)"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "saveBaseCategoriesOnFirstLaunch(groceries:bills:health:holiday:loans:shopping:subscriptions:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -156,9 +156,9 @@
             filePath = "ExpenseLand/Views/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "setCategoryBudgets()"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "shouldPresentWelcomeView()"
             landmarkType = "7">
             <Locations>
                <Location

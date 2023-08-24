@@ -21,7 +21,7 @@ final class MainViewModel: ObservableObject {
         print(persistanceController.fetchExpenses())
     }
     
-    func saveBaseCategoriesOnFirstLaunch(groceries: Double) {
+    func saveBaseCategoriesOnFirstLaunch(groceries: Double, bills: Double, health: Double, holiday: Double, loans: Double, shopping: Double, subscriptions: Double, transport: Double) {
         guard shouldPresentWelcomeScreen == true else {
             return
         }
@@ -29,7 +29,21 @@ final class MainViewModel: ObservableObject {
         for category in CategoryName.allCases {
             switch category {
             case .Groceries:
-                persistanceController.saveCategory(amount: groceries, color: "red", name: category.stringValue, icon: "home.fill")
+                persistanceController.saveCategory(amount: groceries, color: "red", name: category.stringValue, icon: "cart")
+            case .Bills:
+                persistanceController.saveCategory(amount: bills, color: "blue", name: category.stringValue, icon: "dollarsign.circle")
+            case .Health:
+                persistanceController.saveCategory(amount: health, color: "green", name: category.stringValue, icon: "bandage")
+            case .Holiday:
+                persistanceController.saveCategory(amount: holiday, color: "pink", name: category.stringValue, icon: "suitcase.rolling")
+            case .Loans:
+                persistanceController.saveCategory(amount: loans, color: "black", name: category.stringValue, icon: "creditcard")
+            case .Shopping:
+                persistanceController.saveCategory(amount: shopping, color: "grey", name: category.stringValue, icon: "bag")
+            case .Subscriptions:
+                persistanceController.saveCategory(amount: subscriptions, color: "yellow", name: category.stringValue, icon: "clock.arrow.2.circlepath")
+            case .Transport:
+                persistanceController.saveCategory(amount: transport, color: "purple", name: category.stringValue, icon: "car")
             }
         }
         

@@ -21,6 +21,11 @@ struct MainView: View {
     }
 }
 
+
+// dodac kategorie basowe
+// wyswietlac expensy
+// gorny widok na main ktory ma sumowac budget amounts i expensy
+
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
