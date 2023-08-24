@@ -11,18 +11,20 @@ struct MainView: View {
     @EnvironmentObject var viewModel: MainViewModel
     
     var body: some View {
-        VStack {
-            AddExpenseView()
-            Text("1,500")
-            Text("Out of")
-            Text("6,000")
-            Text("budget")
-        }
+        ScrollView {
+            VStack {
+                AddExpenseView()
+                Text("1,500")
+                Text("Out of")
+                Text("6,000")
+                Text("budget")
+                RecentExpensesView()
+            }
+        } // ScrollView
     }
 }
 
-
-// dodac kategorie basowe
+// dodac kategorie basowe - done
 // wyswietlac expensy
 // gorny widok na main ktory ma sumowac budget amounts i expensy
 

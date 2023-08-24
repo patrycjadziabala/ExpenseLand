@@ -11,13 +11,16 @@ final class MainViewModel: ObservableObject {
     
     let persistanceController = PersistenceController.shared
     @Published var shouldPresentWelcomeScreen: Bool = false
+    @Published var expensesShortlist: [Expense] = []
     
     init() {
        shouldPresentWelcomeScreen = shouldPresentWelcomeView()
+        fetchRecentExpenses()
     }
     
     func saveExpense(description: String, amount: Double, date: Date, category: String) {
         persistanceController.saveExpense(description: description, amount: amount, date: date, category: category)
+        fetchRecentExpenses()
         print(persistanceController.fetchExpenses())
     }
     
@@ -58,5 +61,10 @@ final class MainViewModel: ObservableObject {
         } else {
             return false
         }
+    }
+    
+    func fetchRecentExpenses() {
+        expensesShortlist = persistanceController.fetchExpenses()
+        expensesShortlist = Array(expensesShortlist.suffix(5))
     }
 }

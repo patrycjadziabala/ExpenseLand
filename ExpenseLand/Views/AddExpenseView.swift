@@ -11,7 +11,7 @@ struct AddExpenseView: View {
     @EnvironmentObject var viewModel: MainViewModel
     @State var expenseAmount: Double = 0
     @State var description: String = ""
-    @State var category: String = ""
+    @State var category: CategoryName = .Bills
     @State var date: Date = Date()
     
     var body: some View {
@@ -24,18 +24,18 @@ struct AddExpenseView: View {
             .keyboardType(.decimalPad)
             .padding()
             TextField("", text: $description)
-            Picker("", selection: $category) {
+            Picker("Category Picker", selection: $category) {
                 ForEach(CategoryName.allCases, id: \.self) { name in
                     Text(name.stringValue)
                 }
-            }
+            } //picker
             Button {
-                viewModel.saveExpense(description: description, amount: expenseAmount, date: date, category: category)
+                viewModel.saveExpense(description: description, amount: expenseAmount, date: date, category: category.stringValue)
             } label: {
                 Text("Add")
-            }
+            } //button
 
-        }
+        } //vstack
     }
     
 }
