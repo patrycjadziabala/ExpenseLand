@@ -11,11 +11,16 @@ final class MainViewModel: ObservableObject {
     
     let persistanceController = PersistenceController.shared
     @Published var shouldPresentWelcomeScreen: Bool = false
+    @Published var allExpenses: [Expense] = []
     @Published var expensesShortlist: [Expense] = []
+    @Published var totalBudget: String = ""
+    @Published var totalExpenses: String = ""
+    
     
     init() {
        shouldPresentWelcomeScreen = shouldPresentWelcomeView()
         fetchRecentExpenses()
+        fetchTotalBudgetAndTotalExpenses()
     }
     
     func saveExpense(description: String, amount: Double, date: Date, category: String) {
@@ -53,6 +58,10 @@ final class MainViewModel: ObservableObject {
         UserDefaults.standard.set(true, forKey: "BaseCategoriesAlreadySaved")
         
         shouldPresentWelcomeScreen = false
+        
+        let totalBudget = groceries + bills + health + holiday + loans + shopping + subscriptions + transport
+        
+        UserDefaults.standard.set(totalBudget, forKey: "totalBudget")
     }
 
     func shouldPresentWelcomeView() -> Bool {
@@ -64,7 +73,16 @@ final class MainViewModel: ObservableObject {
     }
     
     func fetchRecentExpenses() {
-        expensesShortlist = persistanceController.fetchExpenses()
-        expensesShortlist = Array(expensesShortlist.suffix(5))
+        allExpenses = persistanceController.fetchExpenses()
+        expensesShortlist = Array(allExpenses.suffix(5))
+    }
+    
+    func fetchTotalBudgetAndTotalExpenses() {
+        totalBudget = String(UserDefaults.standard.double(forKey: "totalBudget"))
+        var expenses: Double = 0
+        for expense in allExpenses {
+            expenses += expense.expenseAmount
+        }
+        totalExpenses = String(expenses)
     }
 }

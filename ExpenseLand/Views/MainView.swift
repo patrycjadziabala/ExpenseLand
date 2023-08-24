@@ -14,10 +14,10 @@ struct MainView: View {
         ScrollView {
             VStack {
                 AddExpenseView()
-                Text("1,500")
+                Text(viewModel.totalExpenses)
                 Text("Out of")
-                Text("6,000")
-                Text("budget")
+                Text(viewModel.totalBudget)
+                Text("TotalBudget")
                 RecentExpensesView()
             }
         } // ScrollView
