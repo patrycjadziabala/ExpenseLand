@@ -8,21 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		46BD28532A9766FB00BBED6B /* ExpenseLandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28522A9766FB00BBED6B /* ExpenseLandApp.swift */; };
-		46BD28552A9766FB00BBED6B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28542A9766FB00BBED6B /* ContentView.swift */; };
 		46BD28572A9766FC00BBED6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BD28562A9766FC00BBED6B /* Assets.xcassets */; };
 		46BD285A2A9766FC00BBED6B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BD28592A9766FC00BBED6B /* Preview Assets.xcassets */; };
 		46BD285C2A9766FC00BBED6B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD285B2A9766FC00BBED6B /* Persistence.swift */; };
 		46BD285F2A9766FC00BBED6B /* ExpenseLand.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46BD285D2A9766FC00BBED6B /* ExpenseLand.xcdatamodeld */; };
+		46BD28682A976A9D00BBED6B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28672A976A9D00BBED6B /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		46BD284F2A9766FB00BBED6B /* ExpenseLand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseLand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BD28522A9766FB00BBED6B /* ExpenseLandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseLandApp.swift; sourceTree = "<group>"; };
-		46BD28542A9766FB00BBED6B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		46BD28562A9766FC00BBED6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46BD28592A9766FC00BBED6B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46BD285B2A9766FC00BBED6B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		46BD285E2A9766FC00BBED6B /* ExpenseLand.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseLand.xcdatamodel; sourceTree = "<group>"; };
+		46BD28672A976A9D00BBED6B /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +56,11 @@
 			isa = PBXGroup;
 			children = (
 				46BD28522A9766FB00BBED6B /* ExpenseLandApp.swift */,
-				46BD28542A9766FB00BBED6B /* ContentView.swift */,
 				46BD28562A9766FC00BBED6B /* Assets.xcassets */,
 				46BD285B2A9766FC00BBED6B /* Persistence.swift */,
 				46BD285D2A9766FC00BBED6B /* ExpenseLand.xcdatamodeld */,
 				46BD28582A9766FC00BBED6B /* Preview Content */,
+				46BD28672A976A9D00BBED6B /* Models.swift */,
 			);
 			path = ExpenseLand;
 			sourceTree = "<group>";
@@ -144,9 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				46BD285C2A9766FC00BBED6B /* Persistence.swift in Sources */,
-				46BD28552A9766FB00BBED6B /* ContentView.swift in Sources */,
 				46BD28532A9766FB00BBED6B /* ExpenseLandApp.swift in Sources */,
 				46BD285F2A9766FC00BBED6B /* ExpenseLand.xcdatamodeld in Sources */,
+				46BD28682A976A9D00BBED6B /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
