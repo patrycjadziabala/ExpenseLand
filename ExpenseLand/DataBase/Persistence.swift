@@ -102,7 +102,18 @@ extension PersistenceController {
         } catch {
             print("Error fetching Base Category \(error.localizedDescription)")
         }
-        return [DBCategory(context: viewContext)]
+        return []
+    }
+    
+    func fetchAllCategories() -> [DBCategory] {
+        let request = NSFetchRequest<DBCategory>(entityName: "DBCategory")
+        do {
+            let categories = try viewContext.fetch(request)
+            return categories
+        } catch {
+            print("Error fetching Base Categories \(error.localizedDescription)")
+        }
+        return []
     }
     
     func saveCategoryAmount(category: String, amount: Double) {

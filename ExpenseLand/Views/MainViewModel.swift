@@ -22,7 +22,7 @@ final class MainViewModel: ObservableObject {
        shouldPresentWelcomeScreen = shouldPresentWelcomeView()
         fetchRecentExpenses()
         fetchTotalBudgetAndTotalExpenses()
-        createCategoryCardArray()
+        fetchCategories()
     }
     
     func saveExpense(description: String, amount: Double, date: Date, category: String) {
@@ -74,6 +74,14 @@ final class MainViewModel: ObservableObject {
         }
     }
     
+    func fetchCategories() {
+        let dBCategories = persistanceController.fetchAllCategories()
+        for dBCategory in dBCategories {
+            let category = Category(id: UUID(), categoryName: dBCategory.categoryName ?? "", categoryAmount: dBCategory.categoryAmount, categoryIcon: dBCategory.categoryIcon ?? "home.fill", categoryColor: dBCategory.categoryColor ?? "red", categoryExpense: filterExpenses(for: dBCategory.categoryName ?? ""))
+            categoryCards.append(category)
+        }
+    }
+    
     func fetchRecentExpenses() {
         allExpenses = persistanceController.fetchExpenses()
         expensesShortlist = Array(allExpenses.suffix(5))
@@ -86,13 +94,6 @@ final class MainViewModel: ObservableObject {
             expenses += expense.expenseAmount
         }
         totalExpenses = String(expenses)
-    }
-    
-    func createCategoryCardArray() {
-        for category in CategoryName.allCases {
-            let categoryCard = Category(id: UUID(), categoryName: category.stringValue, categoryAmount: 0, categoryIcon: category.icon, categoryColor: category.color, categoryExpense: filterExpenses(for: category.stringValue))
-            categoryCards.append(categoryCard)
-        }
     }
     
     func filterExpenses(for category: String) -> [Expense] {
