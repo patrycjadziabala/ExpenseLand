@@ -9,11 +9,12 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var viewModel: MainViewModel
+    @State var isPresented: Bool = false
     
     var body: some View {
         ScrollView {
             VStack {
-                AddExpenseView()
+               
                 Text(viewModel.totalExpenses)
                 Text("Out of")
                 Text(viewModel.totalBudget)
@@ -21,6 +22,21 @@ struct MainView: View {
                 RecentExpensesView()
             }
         } // ScrollView
+        .overlay (alignment: .bottomTrailing) {
+            Button {
+                isPresented.toggle()
+            } label: {
+                Image(systemName: "plus.circle.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 70)
+            } //button
+            .padding()
+            .sheet(isPresented: $isPresented) {
+                AddExpenseView()
+            }
+        }
+
     }
 }
 
