@@ -15,12 +15,14 @@ final class MainViewModel: ObservableObject {
     @Published var expensesShortlist: [Expense] = []
     @Published var totalBudget: String = ""
     @Published var totalExpenses: String = ""
+    @Published var categoryCards: [Category] = []
     
     
     init() {
        shouldPresentWelcomeScreen = shouldPresentWelcomeView()
         fetchRecentExpenses()
         fetchTotalBudgetAndTotalExpenses()
+        createCategoryCardArray()
     }
     
     func saveExpense(description: String, amount: Double, date: Date, category: String) {
@@ -37,21 +39,21 @@ final class MainViewModel: ObservableObject {
         for category in CategoryName.allCases {
             switch category {
             case .Groceries:
-                persistanceController.saveCategory(amount: groceries, color: "red", name: category.stringValue, icon: "cart")
+                persistanceController.saveCategory(amount: groceries, color: category.color, name: category.stringValue, icon: category.icon)
             case .Bills:
-                persistanceController.saveCategory(amount: bills, color: "blue", name: category.stringValue, icon: "dollarsign.circle")
+                persistanceController.saveCategory(amount: bills, color: category.color, name: category.stringValue, icon: category.icon)
             case .Health:
-                persistanceController.saveCategory(amount: health, color: "green", name: category.stringValue, icon: "bandage")
+                persistanceController.saveCategory(amount: health, color: category.color, name: category.stringValue, icon: category.icon)
             case .Holiday:
-                persistanceController.saveCategory(amount: holiday, color: "pink", name: category.stringValue, icon: "suitcase.rolling")
+                persistanceController.saveCategory(amount: holiday, color: category.color, name: category.stringValue, icon: category.icon)
             case .Loans:
-                persistanceController.saveCategory(amount: loans, color: "black", name: category.stringValue, icon: "creditcard")
+                persistanceController.saveCategory(amount: loans, color: category.color, name: category.stringValue, icon: category.icon)
             case .Shopping:
-                persistanceController.saveCategory(amount: shopping, color: "grey", name: category.stringValue, icon: "bag")
+                persistanceController.saveCategory(amount: shopping, color: category.color, name: category.stringValue, icon: category.icon)
             case .Subscriptions:
-                persistanceController.saveCategory(amount: subscriptions, color: "yellow", name: category.stringValue, icon: "clock.arrow.2.circlepath")
+                persistanceController.saveCategory(amount: subscriptions, color: category.color, name: category.stringValue, icon: category.icon)
             case .Transport:
-                persistanceController.saveCategory(amount: transport, color: "purple", name: category.stringValue, icon: "car")
+                persistanceController.saveCategory(amount: transport, color: category.color, name: category.stringValue, icon: category.icon)
             }
         }
         
@@ -84,5 +86,27 @@ final class MainViewModel: ObservableObject {
             expenses += expense.expenseAmount
         }
         totalExpenses = String(expenses)
+    }
+    
+    func createCategoryCardArray() {
+        for category in CategoryName.allCases {
+            let categoryCard = Category(id: UUID(), categoryName: category.stringValue, categoryAmount: 0, categoryIcon: category.icon, categoryColor: category.color, categoryExpense: filterExpenses(for: category.stringValue))
+            categoryCards.append(categoryCard)
+        }
+    }
+    
+    func filterExpenses(for category: String) -> [Expense] {
+        var categoryExpenses: [Expense] = []
+        for expense in allExpenses {
+            if expense.expenseCategory == category {
+                categoryExpenses.append(expense)
+            }
+        }
+        return categoryExpenses
+        // refactor:
+//        categoryExpenses = allExpenses.filter { expense in
+//            expense.expenseCategory == category
+//        }
+        
     }
 }

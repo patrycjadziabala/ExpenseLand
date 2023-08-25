@@ -46,4 +46,30 @@ enum CategoryName: CaseIterable {
         case .Shopping: return "shopping"
         }
     }
+    
+    var icon: String {
+        switch self {
+        case .Groceries: return "cart"
+        case .Bills: return "dollarsign.circle"
+        case .Transport: return "car"
+        case .Holiday: return "suitcase.rolling"
+        case .Health: return "bandage"
+        case .Subscriptions: return "clock.arrow.2.circlepath"
+        case .Loans: return "creditcard"
+        case .Shopping: return "bag"
+        }
+    }
+    
+    var color: String {
+        switch self {
+        case .Groceries: return "red"
+        case .Bills: return "blue"
+        case .Transport: return "purple"
+        case .Holiday: return "pink"
+        case .Health: return "green"
+        case .Subscriptions: return "yellow"
+        case .Loans: return "black"
+        case .Shopping: return "grey"
+        }
+    }
 }

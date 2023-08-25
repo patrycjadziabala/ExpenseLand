@@ -21,6 +21,7 @@
 		46BD28772A97C95000BBED6B /* RecentExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28762A97C95000BBED6B /* RecentExpensesView.swift */; };
 		46BD28792A97CD4600BBED6B /* ExpenseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28782A97CD4600BBED6B /* ExpenseRowView.swift */; };
 		46BD287B2A97CE6C00BBED6B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD287A2A97CE6C00BBED6B /* Extensions.swift */; };
+		46BD28812A989C8900BBED6B /* CategoriesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28802A989C8900BBED6B /* CategoriesCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		46BD28762A97C95000BBED6B /* RecentExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentExpensesView.swift; sourceTree = "<group>"; };
 		46BD28782A97CD4600BBED6B /* ExpenseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRowView.swift; sourceTree = "<group>"; };
 		46BD287A2A97CE6C00BBED6B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		46BD28802A989C8900BBED6B /* CategoriesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				46BD28742A97910700BBED6B /* WelcomeView.swift */,
 				46BD28762A97C95000BBED6B /* RecentExpensesView.swift */,
 				46BD28782A97CD4600BBED6B /* ExpenseRowView.swift */,
+				46BD28802A989C8900BBED6B /* CategoriesCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46BD28812A989C8900BBED6B /* CategoriesCardView.swift in Sources */,
 				46BD28772A97C95000BBED6B /* RecentExpensesView.swift in Sources */,
 				46BD285C2A9766FC00BBED6B /* Persistence.swift in Sources */,
 				46BD28532A9766FB00BBED6B /* ExpenseLandApp.swift in Sources */,

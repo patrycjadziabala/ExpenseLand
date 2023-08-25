@@ -19,7 +19,9 @@ struct MainView: View {
                 Text("Out of")
                 Text(viewModel.totalBudget)
                 Text("TotalBudget")
+                CategoriesCardView()
                 RecentExpensesView()
+                
             }
         } // ScrollView
         .overlay (alignment: .bottomTrailing) {
