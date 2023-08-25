@@ -22,6 +22,7 @@
 		46BD28792A97CD4600BBED6B /* ExpenseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28782A97CD4600BBED6B /* ExpenseRowView.swift */; };
 		46BD287B2A97CE6C00BBED6B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD287A2A97CE6C00BBED6B /* Extensions.swift */; };
 		46BD28812A989C8900BBED6B /* CategoriesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28802A989C8900BBED6B /* CategoriesCardView.swift */; };
+		46BD28832A98B5C800BBED6B /* CustomProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28822A98B5C800BBED6B /* CustomProgressViewStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		46BD28782A97CD4600BBED6B /* ExpenseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRowView.swift; sourceTree = "<group>"; };
 		46BD287A2A97CE6C00BBED6B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		46BD28802A989C8900BBED6B /* CategoriesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCardView.swift; sourceTree = "<group>"; };
+		46BD28822A98B5C800BBED6B /* CustomProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressViewStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				46BD286F2A976CAD00BBED6B /* Constants.swift */,
 				46BD287A2A97CE6C00BBED6B /* Extensions.swift */,
+				46BD28822A98B5C800BBED6B /* CustomProgressViewStyle.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				46BD28722A97714D00BBED6B /* AddExpenseView.swift in Sources */,
 				46BD28752A97910700BBED6B /* WelcomeView.swift in Sources */,
 				46BD28792A97CD4600BBED6B /* ExpenseRowView.swift in Sources */,
+				46BD28832A98B5C800BBED6B /* CustomProgressViewStyle.swift in Sources */,
 				46BD287B2A97CE6C00BBED6B /* Extensions.swift in Sources */,
 				46BD286B2A976C2D00BBED6B /* MainView.swift in Sources */,
 				46BD28702A976CAD00BBED6B /* Constants.swift in Sources */,

@@ -24,6 +24,7 @@ import SwiftUI
                                 Text(category.categoryName)
                                 ProgressView(value: category.categoryExpenseTotalAmount, total: category.categoryAmount)
                                     .padding(.horizontal)
+                                    .progressViewStyle(CustomProgressViewStyle(color: Color( Constants.Colors.customFadedGreen), colorString: Constants.Colors.customFadedGreen))
                             } // vstack
                         } //zstack
                     } //foreach
