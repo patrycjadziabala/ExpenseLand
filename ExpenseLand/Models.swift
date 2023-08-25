@@ -14,6 +14,7 @@ struct Category: Hashable, Identifiable {
     let categoryIcon: String
     let categoryColor: String
     let categoryExpense: [Expense]
+    let categoryExpenseTotalAmount: Double
 }
 
 struct Expense: Hashable, Identifiable {

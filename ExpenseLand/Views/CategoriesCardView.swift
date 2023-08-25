@@ -22,9 +22,10 @@ import SwiftUI
                                 .opacity(0.3)
                             VStack {
                                 Text(category.categoryName)
-                                Text("")
-                            }
-                        } //vstack
+                                ProgressView(value: category.categoryExpenseTotalAmount, total: category.categoryAmount)
+                                    .padding(.horizontal)
+                            } // vstack
+                        } //zstack
                     } //foreach
                     .sheet(item: $categoryPresented) { category in
                         Text(category.categoryName)

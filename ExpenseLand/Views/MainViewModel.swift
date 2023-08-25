@@ -77,7 +77,9 @@ final class MainViewModel: ObservableObject {
     func fetchCategories() {
         let dBCategories = persistanceController.fetchAllCategories()
         for dBCategory in dBCategories {
-            let category = Category(id: UUID(), categoryName: dBCategory.categoryName ?? "", categoryAmount: dBCategory.categoryAmount, categoryIcon: dBCategory.categoryIcon ?? "home.fill", categoryColor: dBCategory.categoryColor ?? "red", categoryExpense: filterExpenses(for: dBCategory.categoryName ?? ""))
+            let expenses = filterExpenses(for: dBCategory.categoryName ?? "")
+            let totalAmount = calculateTotalCategoryExpenses(expenses: expenses)
+            let category = Category(id: UUID(), categoryName: dBCategory.categoryName ?? "", categoryAmount: dBCategory.categoryAmount, categoryIcon: dBCategory.categoryIcon ?? "home.fill", categoryColor: dBCategory.categoryColor ?? "red", categoryExpense: expenses, categoryExpenseTotalAmount: totalAmount)
             categoryCards.append(category)
         }
     }
@@ -109,5 +111,13 @@ final class MainViewModel: ObservableObject {
 //            expense.expenseCategory == category
 //        }
         
+    }
+    
+    func calculateTotalCategoryExpenses(expenses: [Expense]) -> Double {
+        var totalExpensesAmount: Double = 0
+        for expense in expenses {
+            totalExpensesAmount += expense.expenseAmount
+        }
+        return totalExpensesAmount
     }
 }
