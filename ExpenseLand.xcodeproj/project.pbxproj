@@ -23,6 +23,9 @@
 		46BD287B2A97CE6C00BBED6B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD287A2A97CE6C00BBED6B /* Extensions.swift */; };
 		46BD28812A989C8900BBED6B /* CategoriesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28802A989C8900BBED6B /* CategoriesCardView.swift */; };
 		46BD28832A98B5C800BBED6B /* CustomProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28822A98B5C800BBED6B /* CustomProgressViewStyle.swift */; };
+		46BD28852A9CBEC800BBED6B /* HeaderForMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28842A9CBEC800BBED6B /* HeaderForMainView.swift */; };
+		46BD28912A9CD2E200BBED6B /* CategoryBudgetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28902A9CD2E200BBED6B /* CategoryBudgetsView.swift */; };
+		46BD28932A9CD40A00BBED6B /* CategoryTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD28922A9CD40A00BBED6B /* CategoryTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,16 @@
 		46BD287A2A97CE6C00BBED6B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		46BD28802A989C8900BBED6B /* CategoriesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCardView.swift; sourceTree = "<group>"; };
 		46BD28822A98B5C800BBED6B /* CustomProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressViewStyle.swift; sourceTree = "<group>"; };
+		46BD28842A9CBEC800BBED6B /* HeaderForMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderForMainView.swift; sourceTree = "<group>"; };
+		46BD28872A9CC80000BBED6B /* YsabeauInfant-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YsabeauInfant-ExtraLight.ttf"; sourceTree = "<group>"; };
+		46BD28882A9CC80000BBED6B /* YsabeauInfant-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YsabeauInfant-ExtraBold.ttf"; sourceTree = "<group>"; };
+		46BD28892A9CC80000BBED6B /* YsabeauInfant-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YsabeauInfant-Regular.ttf"; sourceTree = "<group>"; };
+		46BD288A2A9CC80000BBED6B /* YsabeauInfant-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YsabeauInfant-Medium.ttf"; sourceTree = "<group>"; };
+		46BD288B2A9CC80100BBED6B /* YsabeauInfant-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YsabeauInfant-Black.ttf"; sourceTree = "<group>"; };
+		46BD288C2A9CC80100BBED6B /* YsabeauInfant-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YsabeauInfant-Light.ttf"; sourceTree = "<group>"; };
+		46BD288F2A9CC94B00BBED6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		46BD28902A9CD2E200BBED6B /* CategoryBudgetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBudgetsView.swift; sourceTree = "<group>"; };
+		46BD28922A9CD40A00BBED6B /* CategoryTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +88,7 @@
 		46BD28512A9766FB00BBED6B /* ExpenseLand */ = {
 			isa = PBXGroup;
 			children = (
+				46BD288F2A9CC94B00BBED6B /* Info.plist */,
 				46BD28732A97786B00BBED6B /* DataBase */,
 				46BD286E2A976C9D00BBED6B /* Utilities */,
 				46BD28692A976C1D00BBED6B /* Views */,
@@ -98,12 +112,15 @@
 			isa = PBXGroup;
 			children = (
 				46BD286A2A976C2D00BBED6B /* MainView.swift */,
+				46BD28842A9CBEC800BBED6B /* HeaderForMainView.swift */,
+				46BD28902A9CD2E200BBED6B /* CategoryBudgetsView.swift */,
 				46BD286C2A976C8600BBED6B /* MainViewModel.swift */,
 				46BD28712A97714D00BBED6B /* AddExpenseView.swift */,
 				46BD28742A97910700BBED6B /* WelcomeView.swift */,
 				46BD28762A97C95000BBED6B /* RecentExpensesView.swift */,
 				46BD28782A97CD4600BBED6B /* ExpenseRowView.swift */,
 				46BD28802A989C8900BBED6B /* CategoriesCardView.swift */,
+				46BD28922A9CD40A00BBED6B /* CategoryTitleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,6 +128,7 @@
 		46BD286E2A976C9D00BBED6B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				46BD28862A9CC1F400BBED6B /* Fonts */,
 				46BD286F2A976CAD00BBED6B /* Constants.swift */,
 				46BD287A2A97CE6C00BBED6B /* Extensions.swift */,
 				46BD28822A98B5C800BBED6B /* CustomProgressViewStyle.swift */,
@@ -125,6 +143,19 @@
 				46BD285B2A9766FC00BBED6B /* Persistence.swift */,
 			);
 			path = DataBase;
+			sourceTree = "<group>";
+		};
+		46BD28862A9CC1F400BBED6B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				46BD288B2A9CC80100BBED6B /* YsabeauInfant-Black.ttf */,
+				46BD28882A9CC80000BBED6B /* YsabeauInfant-ExtraBold.ttf */,
+				46BD28872A9CC80000BBED6B /* YsabeauInfant-ExtraLight.ttf */,
+				46BD288C2A9CC80100BBED6B /* YsabeauInfant-Light.ttf */,
+				46BD288A2A9CC80000BBED6B /* YsabeauInfant-Medium.ttf */,
+				46BD28892A9CC80000BBED6B /* YsabeauInfant-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +235,12 @@
 				46BD285F2A9766FC00BBED6B /* ExpenseLand.xcdatamodeld in Sources */,
 				46BD28722A97714D00BBED6B /* AddExpenseView.swift in Sources */,
 				46BD28752A97910700BBED6B /* WelcomeView.swift in Sources */,
+				46BD28852A9CBEC800BBED6B /* HeaderForMainView.swift in Sources */,
 				46BD28792A97CD4600BBED6B /* ExpenseRowView.swift in Sources */,
+				46BD28932A9CD40A00BBED6B /* CategoryTitleView.swift in Sources */,
 				46BD28832A98B5C800BBED6B /* CustomProgressViewStyle.swift in Sources */,
 				46BD287B2A97CE6C00BBED6B /* Extensions.swift in Sources */,
+				46BD28912A9CD2E200BBED6B /* CategoryBudgetsView.swift in Sources */,
 				46BD286B2A976C2D00BBED6B /* MainView.swift in Sources */,
 				46BD28702A976CAD00BBED6B /* Constants.swift in Sources */,
 				46BD28682A976A9D00BBED6B /* Models.swift in Sources */,
@@ -342,6 +376,7 @@
 				DEVELOPMENT_TEAM = 22NX7WBF6A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExpenseLand/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -371,6 +406,7 @@
 				DEVELOPMENT_TEAM = 22NX7WBF6A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExpenseLand/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

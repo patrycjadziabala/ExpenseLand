@@ -40,8 +40,6 @@ struct ExpenseRowView: View {
             .padding([.top, .bottom], 8)
         }
     }
-    
-
 
 struct ExpenseRowView_Previews: PreviewProvider {
     static var previews: some View {

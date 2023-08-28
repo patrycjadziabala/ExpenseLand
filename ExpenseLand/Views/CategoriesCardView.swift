@@ -22,11 +22,15 @@ import SwiftUI
                                 .opacity(0.3)
                             VStack {
                                 Text(category.categoryName)
+                               
                                 ProgressView(value: category.categoryExpenseTotalAmount, total: category.categoryAmount)
                                     .padding(.horizontal)
                                     .progressViewStyle(CustomProgressViewStyle(color: Color( Constants.Colors.customFadedGreen), colorString: Constants.Colors.customFadedGreen))
+//                                Text(category.categoryExpenseTotalAmount)
+//                                Text(category.categoryAmount)
                             } // vstack
                         } //zstack
+                        .padding()
                     } //foreach
                     .sheet(item: $categoryPresented) { category in
                         Text(category.categoryName)

@@ -16,13 +16,14 @@ final class MainViewModel: ObservableObject {
     @Published var totalBudget: String = ""
     @Published var totalExpenses: String = ""
     @Published var categoryCards: [Category] = []
-    
+    @Published var totalBudgetLeft: String = ""
     
     init() {
-       shouldPresentWelcomeScreen = shouldPresentWelcomeView()
+        shouldPresentWelcomeScreen = shouldPresentWelcomeView()
         fetchRecentExpenses()
         fetchTotalBudgetAndTotalExpenses()
         fetchCategories()
+        calculateTotalBudgetLeft()
     }
     
     func saveExpense(description: String, amount: Double, date: Date, category: String) {
@@ -65,10 +66,10 @@ final class MainViewModel: ObservableObject {
         
         UserDefaults.standard.set(totalBudget, forKey: "totalBudget")
     }
-
+    
     func shouldPresentWelcomeView() -> Bool {
         if UserDefaults.standard.object(forKey: "BaseCategoriesAlreadySaved") == nil {
-         return true
+            return true
         } else {
             return false
         }
@@ -107,10 +108,9 @@ final class MainViewModel: ObservableObject {
         }
         return categoryExpenses
         // refactor:
-//        categoryExpenses = allExpenses.filter { expense in
-//            expense.expenseCategory == category
-//        }
-        
+        //        categoryExpenses = allExpenses.filter { expense in
+        //            expense.expenseCategory == category
+        //        }
     }
     
     func calculateTotalCategoryExpenses(expenses: [Expense]) -> Double {
@@ -119,5 +119,11 @@ final class MainViewModel: ObservableObject {
             totalExpensesAmount += expense.expenseAmount
         }
         return totalExpensesAmount
+    }
+    
+    func calculateTotalBudgetLeft() -> String {
+  
+        var totalBudgetLeft = (Double(totalBudget) ?? 0) - (Double(totalExpenses) ?? 0)
+        return String(totalBudgetLeft)
     }
 }

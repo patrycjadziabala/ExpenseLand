@@ -10,20 +10,20 @@ import SwiftUI
 
 
 struct CustomProgressViewStyle: ProgressViewStyle {
- 
+    
     var color: Color
     var colorString: String
     var height: Double = 20.0
     var labelFontStyle: Font = .body
-//    let gradient: 
- 
+    //    let gradient:
+    
     init(color: Color, colorString: String) {
         self.color = color
         self.colorString = colorString
     }
     
     func makeBody(configuration: Configuration) -> some View {
- 
+        
         let progress = configuration.fractionCompleted ?? 0.0
         
         let uiColor = UIColor(named: colorString)
@@ -31,14 +31,14 @@ struct CustomProgressViewStyle: ProgressViewStyle {
         let gradient = Gradient(colors: [Color(uiColor: uiColor ?? UIColor.gray), Color(uiColor: uiColor?.darker() ?? UIColor.red)])
         
         let linearGradient = LinearGradient(gradient: gradient, startPoint: .leading, endPoint: .trailing)
- 
+        
         GeometryReader { geometry in
- 
+            
             VStack(alignment: .leading) {
- 
+                
                 configuration.label
                     .font(labelFontStyle)
- 
+                
                 RoundedRectangle(cornerRadius: 10.0)
                     .fill(Color(uiColor: .systemGray5))
                     .frame(height: height)
@@ -49,16 +49,14 @@ struct CustomProgressViewStyle: ProgressViewStyle {
                             .frame(width: geometry.size.width * progress)
                             .overlay {
                                 if let currentValueLabel = configuration.currentValueLabel {
- 
+                                    
                                     currentValueLabel
                                         .font(.headline)
                                         .foregroundColor(.white)
                                 }
                             }
                     }
- 
             }
- 
         }
     }
 }

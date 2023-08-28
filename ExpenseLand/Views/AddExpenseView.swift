@@ -13,7 +13,6 @@ struct AddExpenseView: View {
     @State var description: String = ""
     @State var category: CategoryName = .Bills
     @State var date: Date = Date()
-//    @Binding var isPresented: Bool
     
     var body: some View {
         

@@ -71,6 +71,14 @@ extension PersistenceController {
         
         save()
     }
+    
+    func saveCategoryAmount(category: String, amount: Double) {
+        guard let category = fetchCategory(categoryName: category).first else {
+            return
+        }
+        category.categoryAmount = amount
+        save()
+    }
 }
 
 // MARK: - Fetch data
@@ -114,14 +122,6 @@ extension PersistenceController {
             print("Error fetching Base Categories \(error.localizedDescription)")
         }
         return []
-    }
-    
-    func saveCategoryAmount(category: String, amount: Double) {
-        guard let category = fetchCategory(categoryName: category).first else {
-            return
-        }
-        category.categoryAmount = amount
-        save()
     }
 }
 

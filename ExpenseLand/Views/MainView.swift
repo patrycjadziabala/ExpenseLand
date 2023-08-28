@@ -14,15 +14,10 @@ struct MainView: View {
     var body: some View {
         ScrollView {
             VStack {
-               
-                Text(viewModel.totalExpenses)
-                Text("Out of")
-                Text(viewModel.totalBudget)
-                Text("TotalBudget")
+                HeaderForMainView()
                 CategoriesCardView()
                 RecentExpensesView()
-                
-            }
+            } //vstack
         } // ScrollView
         .overlay (alignment: .bottomTrailing) {
             Button {
@@ -38,13 +33,8 @@ struct MainView: View {
                 AddExpenseView()
             }
         }
-
     }
 }
-
-// dodac kategorie basowe - done
-// wyswietlac expensy
-// gorny widok na main ktory ma sumowac budget amounts i expensy
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {

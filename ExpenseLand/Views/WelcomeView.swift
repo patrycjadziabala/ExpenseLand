@@ -36,7 +36,7 @@ struct WelcomeView: View {
                         Text("Enter amount")
                     }
                     .keyboardType(.numberPad)
-                }
+                } //hstack
                 .padding()
                 HStack {
                     Text("Bills")
@@ -45,7 +45,7 @@ struct WelcomeView: View {
                         Text("Enter amount")
                     }
                     .keyboardType(.numberPad)
-                }
+                } //hstack
                 .padding()
                 HStack {
                     Text("Health")
@@ -54,7 +54,7 @@ struct WelcomeView: View {
                         Text("Enter amount")
                     }
                     .keyboardType(.numberPad)
-                }
+                } //hstack
                 .padding()
                 HStack {
                     Text("Holiday")
@@ -63,7 +63,7 @@ struct WelcomeView: View {
                         Text("Enter amount")
                     }
                     .keyboardType(.numberPad)
-                }
+                } //hstack
                 .padding()
                 HStack {
                     Text("Loans")
@@ -72,7 +72,7 @@ struct WelcomeView: View {
                         Text("Enter amount")
                     }
                     .keyboardType(.numberPad)
-                }
+                } //hstack
                 .padding()
                 HStack {
                     Text("Shopping")
@@ -81,7 +81,7 @@ struct WelcomeView: View {
                         Text("Enter amount")
                     }
                     .keyboardType(.numberPad)
-                }
+                } //hstack
                 .padding()
                 HStack {
                     Text("Subscriptions")
@@ -90,7 +90,7 @@ struct WelcomeView: View {
                         Text("Enter amount")
                     }
                     .keyboardType(.numberPad)
-                }
+                } //hstack
                 .padding()
                 HStack {
                     Text("Transport")
@@ -99,7 +99,7 @@ struct WelcomeView: View {
                         Text("Enter amount")
                     }
                     .keyboardType(.numberPad)
-                }
+                } //hstack
                 .padding()
             } //vstack
             
@@ -107,8 +107,8 @@ struct WelcomeView: View {
                 viewModel.saveBaseCategoriesOnFirstLaunch(groceries: groceriesBudget, bills: billsBudget, health: healthBudget, holiday: holidayBudget, loans: loansBudget, shopping: shoppingBudget, subscriptions: subscriptionsBudget, transport: transportBudget)
             } label: {
                 Text("Save and Enter")
-            }
-        }
+            } //button
+        } //vstack
     }
 }
 
