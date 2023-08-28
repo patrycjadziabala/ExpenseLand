@@ -63,14 +63,14 @@ enum CategoryName: CaseIterable {
     
     var color: String {
         switch self {
-        case .Groceries: return "red"
-        case .Bills: return "blue"
-        case .Transport: return "purple"
-        case .Holiday: return "pink"
-        case .Health: return "green"
-        case .Subscriptions: return "yellow"
-        case .Loans: return "black"
-        case .Shopping: return "grey"
+        case .Groceries: return Constants.Colors.customBlue
+        case .Bills: return Constants.Colors.customFadedGreen
+        case .Transport: return Constants.Colors.customLightBlue
+        case .Holiday: return Constants.Colors.customLightGreen
+        case .Health: return Constants.Colors.customLightPink
+        case .Subscriptions: return Constants.Colors.customLightYellow
+        case .Loans: return Constants.Colors.customLightPurple
+        case .Shopping: return Constants.Colors.customOrange
         }
     }
 }

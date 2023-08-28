@@ -23,7 +23,7 @@ struct AddExpenseView: View {
             }
             .keyboardType(.decimalPad)
             .padding()
-            TextField("", text: $description)
+            TextField("description", text: $description)
             Picker("Category Picker", selection: $category) {
                 ForEach(CategoryName.allCases, id: \.self) { name in
                     Text(name.stringValue)

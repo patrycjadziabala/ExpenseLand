@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct CategoryTitleView: View {
-    @EnvironmentObject var viewModel: MainViewModel
-    @State private var categoryPresented: Category?
+  
+    var categoryTitle: String
+    var categoryColor: String
+    var categoryIcon: String
+    var categoryBudget: String
     
     var body: some View {
         ZStack {
-            Color(categoryPresented?.categoryColor ?? "red")
+            Color(categoryColor)
                 .opacity(0.4)
             HStack {
                 ZStack {
                     Circle()
                         .foregroundColor(.white)
                         .frame(height: 60)
-                    Image(systemName: categoryPresented?.categoryIcon ?? "home.fill")
+                    Image(systemName: categoryIcon)
                         .resizable()
                         .scaledToFit()
                         .frame(height: 30)
@@ -30,11 +33,11 @@ struct CategoryTitleView: View {
                 .padding()
                 Spacer()
                 VStack {
-                    Text(categoryPresented?.categoryName ?? "Default")
+                    Text(categoryTitle)
                         .font(.custom(Constants.Fonts.bold, size: 30))
                         .shadow(radius: 0.3)
                     HStack {
-                        Text(viewModel.$totalBudget)
+                        Text(categoryBudget)
                             .font(.custom(Constants.Fonts.extraBold, size: 16))
                         Text("Spent this month")
                             .font(.custom(Constants.Fonts.regular, size: 16))
@@ -58,9 +61,8 @@ struct CategoryTitleView: View {
         } //zstack
     }
 
-
 struct CategoryTitleView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryTitleView()
+        CategoryTitleView(categoryTitle: "Bills", categoryColor: "red", categoryIcon: "home.fill", categoryBudget: "500")
     }
 }

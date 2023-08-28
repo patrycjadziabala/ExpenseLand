@@ -11,13 +11,13 @@ import SwiftUI
 
 struct CustomProgressViewStyle: ProgressViewStyle {
     
-    var color: Color
+    var color: String
     var colorString: String
     var height: Double = 20.0
     var labelFontStyle: Font = .body
     //    let gradient:
     
-    init(color: Color, colorString: String) {
+    init(color: String, colorString: String) {
         self.color = color
         self.colorString = colorString
     }
