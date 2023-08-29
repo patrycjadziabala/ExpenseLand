@@ -12,7 +12,7 @@ struct CategoryTitleView: View {
     var categoryTitle: String
     var categoryColor: String
     var categoryIcon: String
-    var categoryBudget: String
+    var categoryExpensesTotal: String
     
     var body: some View {
         ZStack {
@@ -37,7 +37,7 @@ struct CategoryTitleView: View {
                         .font(.custom(Constants.Fonts.bold, size: 30))
                         .shadow(radius: 0.3)
                     HStack {
-                        Text(categoryBudget)
+                        Text(categoryExpensesTotal)
                             .font(.custom(Constants.Fonts.extraBold, size: 16))
                         Text("Spent this month")
                             .font(.custom(Constants.Fonts.regular, size: 16))
@@ -63,6 +63,6 @@ struct CategoryTitleView: View {
 
 struct CategoryTitleView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryTitleView(categoryTitle: "Bills", categoryColor: "red", categoryIcon: "home.fill", categoryBudget: "500")
+        CategoryTitleView(categoryTitle: "Bills", categoryColor: "red", categoryIcon: "home.fill", categoryExpensesTotal: "400")
     }
 }

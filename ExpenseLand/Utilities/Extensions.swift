@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 extension DateFormatter {
     static let allNumeric: DateFormatter = {
@@ -67,4 +68,16 @@ extension UIColor {
     func darker(componentDelta: CGFloat = 0.1) -> UIColor {
         return makeColor(componentDelta: -1*componentDelta)
     }
+}
+
+extension Color {
+    static let customBlue = Color("CustomBlue")
+    static let customLightBlue = Color("CustomLightBlue")
+    static let customFadedGreen = Color("CustomFadedGreen")
+    static let customLightGreen = Color("CustomLightGreen")
+    static let customLightPink = Color("CustomLightPink")
+    static let customLightPurple = Color("CustomLightPurple")
+    static let customLightYellow = Color("CustomLightYellow")
+    static let customOrange = Color("CustomOrange")
+    static let customRed = Color("CustomRed")
 }

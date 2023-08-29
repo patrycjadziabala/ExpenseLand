@@ -18,16 +18,22 @@ struct CategoriesCardView: View {
                     category in
                     ZStack {
                         Rectangle()
-                            .foregroundColor(.cyan)
+                            .foregroundColor(.customLightYellow)
                             .opacity(0.3)
-                        VStack {
-                            CategoryTitleView(categoryTitle: category.categoryName, categoryColor: Constants.Colors.customLightPink, categoryIcon: category.categoryIcon, categoryBudget: String(category.categoryAmount))
+                        VStack (spacing: 15) {
+                            CategoryTitleView(categoryTitle: category.categoryName, categoryColor: Constants.Colors.customLightPink, categoryIcon: category.categoryIcon, categoryExpensesTotal: String(category.categoryExpenseTotalAmount))
                             //
                             ProgressView(value: category.categoryExpenseTotalAmount, total: category.categoryAmount)
                                 .padding(.horizontal)
                                 .progressViewStyle(CustomProgressViewStyle(color:  Constants.Colors.customFadedGreen, colorString: Constants.Colors.customRed))
-                            //                                Text(category.categoryExpenseTotalAmount)
-                            //                                Text(category.categoryAmount)
+                            HStack {
+                                Text(Constants.Titles.spent)
+                                Text(String(category.categoryExpenseTotalAmount))
+                                Text(Constants.Titles.outOf)
+                                Text(String(category.categoryAmount))
+                                Text(Constants.Titles.budget)
+                            } //hstack
+                            Text(String(category.categoryExpensesPercentage))
                         } // vstack
                     } //zstack
                     .padding()

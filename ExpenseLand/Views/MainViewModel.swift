@@ -17,6 +17,9 @@ final class MainViewModel: ObservableObject {
     @Published var totalExpenses: String = ""
     @Published var categoryCards: [Category] = []
     @Published var totalBudgetLeft: String = ""
+    @Published var categoryBudgetPercentageUsed: Double = 0
+    @Published var totalExpenseAmountForCategory: Double = 0
+    @Published var totalBudgetForCategory: Double = 0
     
     init() {
         shouldPresentWelcomeScreen = shouldPresentWelcomeView()
@@ -29,14 +32,13 @@ final class MainViewModel: ObservableObject {
     func saveExpense(description: String, amount: Double, date: Date, category: String) {
         persistanceController.saveExpense(description: description, amount: amount, date: date, category: category)
         fetchRecentExpenses()
-        print(persistanceController.fetchExpenses())
+//        print(persistanceController.fetchExpenses())
     }
     
     func saveBaseCategoriesOnFirstLaunch(groceries: Double, bills: Double, health: Double, holiday: Double, loans: Double, shopping: Double, subscriptions: Double, transport: Double) {
         guard shouldPresentWelcomeScreen == true else {
             return
         }
-        
         for category in CategoryName.allCases {
             switch category {
             case .Groceries:
@@ -80,7 +82,8 @@ final class MainViewModel: ObservableObject {
         for dBCategory in dBCategories {
             let expenses = filterExpenses(for: dBCategory.categoryName ?? "")
             let totalAmount = calculateTotalCategoryExpenses(expenses: expenses)
-            let category = Category(id: UUID(), categoryName: dBCategory.categoryName ?? "", categoryAmount: dBCategory.categoryAmount, categoryIcon: dBCategory.categoryIcon ?? "home.fill", categoryColor: dBCategory.categoryColor ?? "red", categoryExpense: expenses, categoryExpenseTotalAmount: totalAmount)
+            let categoryBudgetPercentageUsed = calculateCategoryBudgetPercentageUsed(categories: categoryCards)
+            let category = Category(id: UUID(), categoryName: dBCategory.categoryName ?? "", categoryAmount: dBCategory.categoryAmount, categoryIcon: dBCategory.categoryIcon ?? "home.fill", categoryColor: dBCategory.categoryColor ?? "red", categoryExpense: expenses, categoryExpenseTotalAmount: totalAmount, categoryExpensesPercentage: categoryBudgetPercentageUsed)
             categoryCards.append(category)
         }
     }
@@ -118,12 +121,29 @@ final class MainViewModel: ObservableObject {
         for expense in expenses {
             totalExpensesAmount += expense.expenseAmount
         }
+        totalExpenseAmountForCategory = totalExpensesAmount
         return totalExpensesAmount
     }
     
-    func calculateTotalBudgetLeft() -> String {
-  
-        var totalBudgetLeft = (Double(totalBudget) ?? 0) - (Double(totalExpenses) ?? 0)
-        return String(totalBudgetLeft)
+    func calculateCategoryBudgetPercentageUsed(categories: [Category]) -> Double {
+        var totalCategoryBudget: Double = 0
+        for category in categories {
+            totalCategoryBudget = category.categoryAmount
+            let percentageUsed = (totalExpenseAmountForCategory * 100) / totalCategoryBudget
+            categoryBudgetPercentageUsed = percentageUsed
+            print(category.categoryName)
+                    print(totalExpenseAmountForCategory)
+                    print(totalCategoryBudget)
+//                    print(categoryBudgetPercentageUsed)
+            print("Next category")
+        }
+
+        return totalCategoryBudget
+    }
+    
+    func calculateTotalBudgetLeft() -> Double {
+        let budgetLeft = (Double(totalBudget) ?? 0) - (Double(totalExpenses) ?? 0)
+        totalBudgetLeft = String(budgetLeft)
+        return Double(budgetLeft)
     }
 }

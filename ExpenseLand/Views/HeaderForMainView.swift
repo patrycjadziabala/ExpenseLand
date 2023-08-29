@@ -10,6 +10,7 @@ import SwiftUI
 struct HeaderForMainView: View {
     @EnvironmentObject var viewModel: MainViewModel
     @State private var setBudgets: Bool = false
+//    @State var totalBudgetLeft: String = ""
     
     var body: some View {
         ZStack {
@@ -24,7 +25,8 @@ struct HeaderForMainView: View {
                         .foregroundColor(.white)
                         .shadow(radius: 0.6)
                     VStack (spacing: 5) {
-                            Text(viewModel.totalExpenses)
+                        Text(viewModel.totalBudgetLeft)
+                            .padding()
                                 .font(.custom(Constants.Fonts.bold, size: 45))
                                 .foregroundColor(.white)
                                 .opacity(0.7)
