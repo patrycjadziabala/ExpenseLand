@@ -30,7 +30,6 @@ struct CategoriesCardView: View {
                                     .padding()
                                 HStack {
                                     Text(Constants.Titles.spent)
-                                    
                                     Text(category.categoryExpenseTotalAmount , format: .currency(code: "GBP"))
                                     Text(Constants.Titles.outOf)
                                     Text(category.categoryAmount, format: .currency(code: "GBP"))
