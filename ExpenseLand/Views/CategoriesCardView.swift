@@ -17,30 +17,30 @@ struct CategoriesCardView: View {
                 ForEach(viewModel.categoryCards, id: \.self) {
                     category in
                     VStack {
-                        CategoryTitleView(categoryTitle: category.categoryName, categoryColor: Constants.Colors.customLightPink, categoryIcon: category.categoryIcon, categoryExpensesTotal: category.categoryExpenseTotalAmount)
+                        CategoryTitleView(categoryTitle: category.categoryName, categoryColor: Constants.Colors.customLightPink, categoryIcon: category.categoryIcon, categoryExpensesTotal: category.categoryExpensesPercentage)
                         
                         ZStack {
                             Rectangle()
                                 .foregroundColor(.customRed)
                                 .opacity(0.3)
-                            VStack (spacing: 15) {
-                                
-                                
+                            VStack (spacing: 5) {
+                                Spacer()
                                 ProgressView(value: category.categoryExpenseTotalAmount, total: category.categoryAmount)
-                                    .padding(.horizontal)
                                     .progressViewStyle(CustomProgressViewStyle(color:  Constants.Colors.customFadedGreen, colorString: Constants.Colors.customLightGreen))
+                                    .padding()
                                 HStack {
                                     Text(Constants.Titles.spent)
                                     Text(category.categoryExpenseTotalAmount as NSNumber, formatter: NumberFormatter.currency)
                                     Text(Constants.Titles.outOf)
                                     Text(category.categoryAmount as NSNumber, formatter: NumberFormatter.currency)
                                     Text(Constants.Titles.budget)
+                                    .scaledToFit()
                                 } //hstack
-                                
+                                Spacer(minLength: 60)
                             } // vstack
                         } //zstack
                         .padding()
-                    }
+                    } //vstack
                 } //foreach
                 .sheet(item: $categoryPresented) { category in
                     Text(category.categoryName)
@@ -48,9 +48,8 @@ struct CategoriesCardView: View {
             } //tabview
             .tabViewStyle(.page)
             .frame(height: 300)
-            .padding()
-        }
-        .padding()
+            .padding([.leading, .trailing])
+        } //vstack
         .cornerRadius(30, corners: [.bottomLeft, .bottomRight])
     }
 }

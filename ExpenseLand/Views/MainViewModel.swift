@@ -83,7 +83,7 @@ final class MainViewModel: ObservableObject {
             let expenses = filterExpenses(for: dBCategory.categoryName ?? "")
             let totalAmount = calculateTotalCategoryExpenses(expenses: expenses)
             let categoryBudgetPercentageUsed = calculateCategoryBudgetPercentageUsed(categories: categoryCards)
-            let category = Category(id: UUID(), categoryName: dBCategory.categoryName ?? "", categoryAmount: dBCategory.categoryAmount, categoryIcon: dBCategory.categoryIcon ?? "home.fill", categoryColor: dBCategory.categoryColor ?? "red", categoryExpense: expenses, categoryExpenseTotalAmount: totalAmount, categoryExpensesPercentage: categoryBudgetPercentageUsed)
+            let category = Category(id: UUID(), categoryName: dBCategory.categoryName ?? "", categoryAmount: dBCategory.categoryAmount, categoryIcon: dBCategory.categoryIcon ?? "house.fill", categoryColor: dBCategory.categoryColor ?? "red", categoryExpense: expenses, categoryExpenseTotalAmount: totalAmount, categoryExpensesPercentage: categoryBudgetPercentageUsed)
             categoryCards.append(category)
         }
     }

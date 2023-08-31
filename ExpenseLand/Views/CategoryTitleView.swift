@@ -25,6 +25,7 @@ struct CategoryTitleView: View {
                     Circle()
                         .foregroundColor(.white)
                         .frame(height: 60)
+                        .scaledToFit()
                     Image(systemName: categoryIcon)
                         .resizable()
                         .scaledToFit()
@@ -32,18 +33,24 @@ struct CategoryTitleView: View {
                         .shadow(radius: 5)
                 } //zstack
                 .frame(alignment: .center)
+           
                 .padding()
+                
                 Spacer()
-                VStack {
-                    Text(categoryTitle)
-                        .font(.custom(Constants.Fonts.bold, size: 30))
+                VStack (spacing: 15) {
+                    Text(categoryTitle.capitalized)
+                        .font(.custom(Constants.Fonts.bold, size: 25))
+                        .scaledToFill()
                         .shadow(radius: 0.3)
                     HStack {
-                        Text(String(categoryExpensesTotal))
+                        Text(Double(categoryExpensesTotal) as NSNumber, formatter: NumberFormatter.percent)
                             .font(.custom(Constants.Fonts.extraBold, size: 16))
-                        Text("Spent this month")
-                            .font(.custom(Constants.Fonts.regular, size: 16))
+                            Text(Constants.Titles.budget)
+                            Text(Constants.Titles.used)
+                            Text(Constants.Titles.thisMonth)
                     }
+                    .font(.custom(Constants.Fonts.light, size: 13))
+                    .scaledToFill()
                     .foregroundColor(.black)
                     .shadow(radius: 2)
                 } //vstack
@@ -58,15 +65,18 @@ struct CategoryTitleView: View {
                 }// vstack
                 .frame(alignment: .top)
             } // hstack
+          
         }
+     
         .frame(height: 100)
         .cornerRadius(30, corners: [.topLeft, .topRight])
+        .padding([.leading, .trailing])
         } //zstack
     }
 
 struct CategoryTitleView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryTitleView(categoryTitle: "Bills", categoryColor: "red", categoryIcon: "home.fill", categoryExpensesTotal: 10)
+        CategoryTitleView(categoryTitle: "Bills", categoryColor: "red", categoryIcon: "house.fill", categoryExpensesTotal: 10)
             .previewLayout(.sizeThatFits)
     }
 }

@@ -20,7 +20,9 @@ struct Constants {
         static let totalBudget = "total budget"
         static let setBudgets = "Set budgets"
         static let spent = "Spent"
+        static let used = "used"
         static let budget = "budget"
+        static let thisMonth = "this month"
     }
     
     //MARK: - Colors
