@@ -9,6 +9,24 @@ import Foundation
 import UIKit
 import SwiftUI
 
+// MARK: - Number formatter
+extension NumberFormatter {
+    static var currency: NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currencyAccounting
+        return formatter
+    }
+}
+
+// MARK: - Number formatter
+extension NumberFormatter {
+    static var percent: NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .percent
+        return formatter
+    }
+}
+// MARK: - Date formatter
 extension DateFormatter {
     static let allNumeric: DateFormatter = {
         let formatter = DateFormatter()
@@ -23,7 +41,7 @@ extension Date {
         DateFormatter.allNumeric.string(from: self)
     }
 }
-
+// MARK: - Color
 extension UIColor {
     private func makeColor(componentDelta: CGFloat) -> UIColor {
         var red: CGFloat = 0

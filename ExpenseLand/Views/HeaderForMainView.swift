@@ -25,7 +25,7 @@ struct HeaderForMainView: View {
                         .foregroundColor(.white)
                         .shadow(radius: 0.6)
                     VStack (spacing: 5) {
-                        Text(viewModel.totalBudgetLeft)
+                        Text(Double(viewModel.totalBudgetLeft)! as NSNumber, formatter: NumberFormatter.currency)
                             .padding()
                                 .font(.custom(Constants.Fonts.bold, size: 45))
                                 .foregroundColor(.white)
@@ -38,7 +38,7 @@ struct HeaderForMainView: View {
             //                Text(viewModel.totalBudgetLeft)
                         HStack {
                             Text(Constants.Titles.outOf)
-                            Text(viewModel.totalBudget)
+                            Text(Double(viewModel.totalBudget)! as NSNumber, formatter: NumberFormatter.currency)
                             Text(Constants.Titles.totalBudget)
                         }
                         .font(.custom(Constants.Fonts.medium, size: 25))
@@ -77,5 +77,6 @@ struct HeaderForMainView: View {
 struct HeaderForMainView_Previews: PreviewProvider {
     static var previews: some View {
         HeaderForMainView()
+            .previewLayout(.sizeThatFits)
     }
 }

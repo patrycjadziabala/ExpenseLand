@@ -64,5 +64,6 @@ struct CategoryTitleView: View {
 struct CategoryTitleView_Previews: PreviewProvider {
     static var previews: some View {
         CategoryTitleView(categoryTitle: "Bills", categoryColor: "red", categoryIcon: "home.fill", categoryExpensesTotal: "400")
+            .previewLayout(.sizeThatFits)
     }
 }

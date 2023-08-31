@@ -129,16 +129,17 @@ final class MainViewModel: ObservableObject {
         var totalCategoryBudget: Double = 0
         for category in categories {
             totalCategoryBudget = category.categoryAmount
-            let percentageUsed = (totalExpenseAmountForCategory * 100) / totalCategoryBudget
+            let percentageUsed = totalExpenseAmountForCategory / totalCategoryBudget
+            
             categoryBudgetPercentageUsed = percentageUsed
             print(category.categoryName)
                     print(totalExpenseAmountForCategory)
                     print(totalCategoryBudget)
-//                    print(categoryBudgetPercentageUsed)
+                    print(categoryBudgetPercentageUsed)
             print("Next category")
         }
 
-        return totalCategoryBudget
+        return categoryBudgetPercentageUsed
     }
     
     func calculateTotalBudgetLeft() -> Double {

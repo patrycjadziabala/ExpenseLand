@@ -22,15 +22,15 @@ struct CategoriesCardView: View {
                             .opacity(0.3)
                         VStack (spacing: 15) {
                             CategoryTitleView(categoryTitle: category.categoryName, categoryColor: Constants.Colors.customLightPink, categoryIcon: category.categoryIcon, categoryExpensesTotal: String(category.categoryExpenseTotalAmount))
-                            //
+                            
                             ProgressView(value: category.categoryExpenseTotalAmount, total: category.categoryAmount)
                                 .padding(.horizontal)
                                 .progressViewStyle(CustomProgressViewStyle(color:  Constants.Colors.customFadedGreen, colorString: Constants.Colors.customRed))
                             HStack {
                                 Text(Constants.Titles.spent)
-                                Text(String(category.categoryExpenseTotalAmount))
+                                Text(category.categoryExpenseTotalAmount as NSNumber, formatter: NumberFormatter.currency)
                                 Text(Constants.Titles.outOf)
-                                Text(String(category.categoryAmount))
+                                Text(category.categoryAmount as NSNumber, formatter: NumberFormatter.currency)
                                 Text(Constants.Titles.budget)
                             } //hstack
                             Text(String(category.categoryExpensesPercentage))
@@ -52,5 +52,6 @@ struct CategoriesCardView: View {
 struct CategoriesCardView_Previews: PreviewProvider {
     static var previews: some View {
         CategoriesCardView()
+            .previewLayout(.sizeThatFits)
     }
 }
