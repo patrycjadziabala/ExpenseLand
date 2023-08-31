@@ -68,6 +68,7 @@ extension PersistenceController {
         category.categoryAmount = amount
         category.categoryName = name
         category.categoryIcon = icon
+        category.categoryColor = color
         
         save()
     }

@@ -67,6 +67,11 @@ final class MainViewModel: ObservableObject {
         let totalBudget = groceries + bills + health + holiday + loans + shopping + subscriptions + transport
         
         UserDefaults.standard.set(totalBudget, forKey: "totalBudget")
+        
+        fetchRecentExpenses()
+        fetchTotalBudgetAndTotalExpenses()
+        fetchCategories()
+        calculateTotalBudgetLeft()
     }
     
     func shouldPresentWelcomeView() -> Bool {
@@ -83,9 +88,10 @@ final class MainViewModel: ObservableObject {
             let expenses = filterExpenses(for: dBCategory.categoryName ?? "")
             let totalAmount = calculateTotalCategoryExpenses(expenses: expenses)
             let percentage = calculatePercent(total: dBCategory.categoryAmount, used: totalAmount)
-            let category = Category(id: UUID(), categoryName: dBCategory.categoryName ?? "", categoryAmount: dBCategory.categoryAmount, categoryIcon: dBCategory.categoryIcon ?? "house.fill", categoryColor: dBCategory.categoryColor ?? "red", categoryExpense: expenses, categoryExpenseTotalAmount: totalAmount, categoryExpensesPercentage: percentage)
+            let category = Category(id: UUID(), categoryName: dBCategory.categoryName ?? "", categoryAmount: dBCategory.categoryAmount, categoryIcon: dBCategory.categoryIcon ?? "house.fill", categoryColor: dBCategory.categoryColor ?? "white", categoryExpense: expenses, categoryExpenseTotalAmount: totalAmount, categoryExpensesPercentage: percentage)
             categoryCards.append(category)
         }
+        print(categoryCards)
     }
     
     func fetchRecentExpenses() {

@@ -17,7 +17,7 @@ struct CategoriesCardView: View {
                 ForEach(viewModel.categoryCards, id: \.self) {
                     category in
                     VStack {
-                        CategoryTitleView(categoryTitle: category.categoryName, categoryColor: Constants.Colors.customLightPink, categoryIcon: category.categoryIcon, categoryExpensesTotal: category.categoryExpensesPercentage)
+                        CategoryTitleView(categoryTitle: category.categoryName, categoryColor: category.categoryColor, categoryIcon: category.categoryIcon, categoryExpensesTotal: category.categoryExpensesPercentage)
                         
                         ZStack {
                             Rectangle()

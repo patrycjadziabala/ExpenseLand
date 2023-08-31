@@ -18,7 +18,7 @@ struct CategoryTitleView: View {
         ZStack {
 //            Color(categoryColor)
             Rectangle()
-                .foregroundColor(.customLightPurple)
+                .foregroundColor(Color(categoryColor))
                 .opacity(0.4)
             HStack {
                 ZStack {
