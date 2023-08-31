@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddExpenseView: View {
     @EnvironmentObject var viewModel: MainViewModel
+    @Environment(\.dismiss) var dismiss
     @State var expenseAmount: Double = 0
     @State var description: String = ""
     @State var category: CategoryName = .Bills
@@ -31,9 +32,11 @@ struct AddExpenseView: View {
             } //picker
             Button {
                 viewModel.saveExpense(description: description, amount: expenseAmount, date: date, category: category.stringValue)
+                dismiss()
             } label: {
                 Text("Add")
             } //button
+            
         } //vstack
     }
 }

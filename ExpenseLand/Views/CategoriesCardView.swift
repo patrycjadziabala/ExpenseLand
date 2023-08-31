@@ -30,9 +30,10 @@ struct CategoriesCardView: View {
                                     .padding()
                                 HStack {
                                     Text(Constants.Titles.spent)
-                                    Text(category.categoryExpenseTotalAmount as NSNumber, formatter: NumberFormatter.currency)
+                                    
+                                    Text(category.categoryExpenseTotalAmount , format: .currency(code: "GBP"))
                                     Text(Constants.Titles.outOf)
-                                    Text(category.categoryAmount as NSNumber, formatter: NumberFormatter.currency)
+                                    Text(category.categoryAmount, format: .currency(code: "GBP"))
                                     Text(Constants.Titles.budget)
                                     .scaledToFit()
                                 } //hstack
