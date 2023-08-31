@@ -82,8 +82,8 @@ final class MainViewModel: ObservableObject {
         for dBCategory in dBCategories {
             let expenses = filterExpenses(for: dBCategory.categoryName ?? "")
             let totalAmount = calculateTotalCategoryExpenses(expenses: expenses)
-            let categoryBudgetPercentageUsed = calculateCategoryBudgetPercentageUsed(categories: categoryCards)
-            let category = Category(id: UUID(), categoryName: dBCategory.categoryName ?? "", categoryAmount: dBCategory.categoryAmount, categoryIcon: dBCategory.categoryIcon ?? "house.fill", categoryColor: dBCategory.categoryColor ?? "red", categoryExpense: expenses, categoryExpenseTotalAmount: totalAmount, categoryExpensesPercentage: categoryBudgetPercentageUsed)
+            let percentage = calculatePercent(total: dBCategory.categoryAmount, used: totalAmount)
+            let category = Category(id: UUID(), categoryName: dBCategory.categoryName ?? "", categoryAmount: dBCategory.categoryAmount, categoryIcon: dBCategory.categoryIcon ?? "house.fill", categoryColor: dBCategory.categoryColor ?? "red", categoryExpense: expenses, categoryExpenseTotalAmount: totalAmount, categoryExpensesPercentage: percentage)
             categoryCards.append(category)
         }
     }
@@ -125,26 +125,12 @@ final class MainViewModel: ObservableObject {
         return totalExpensesAmount
     }
     
-    func calculateCategoryBudgetPercentageUsed(categories: [Category]) -> Double {
-        var totalCategoryBudget: Double = 0
-        for category in categories {
-            totalCategoryBudget = category.categoryAmount
-            let percentageUsed = totalExpenseAmountForCategory / totalCategoryBudget
-            
-            categoryBudgetPercentageUsed = percentageUsed
-            print(category.categoryName)
-                    print(totalExpenseAmountForCategory)
-                    print(totalCategoryBudget)
-                    print(categoryBudgetPercentageUsed)
-            print("Next category")
-        }
-
-        return categoryBudgetPercentageUsed
+    func calculatePercent(total: Double, used: Double) -> Double {
+        used / total
     }
     
-    func calculateTotalBudgetLeft() -> Double {
+    func calculateTotalBudgetLeft() {
         let budgetLeft = (Double(totalBudget) ?? 0) - (Double(totalExpenses) ?? 0)
         totalBudgetLeft = String(budgetLeft)
-        return Double(budgetLeft)
     }
 }

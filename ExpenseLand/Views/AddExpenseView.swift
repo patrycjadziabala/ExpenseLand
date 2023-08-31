@@ -16,21 +16,20 @@ struct AddExpenseView: View {
     @State var date: Date = Date()
     
     var body: some View {
-        
         ZStack {
             Color(Constants.Colors.customFadedGreen)
                 .opacity(0.2)
                 .ignoresSafeArea()
             VStack {
-                Text("Add Expense")
+                Text(Constants.Titles.addExpense)
                     .font(.custom(Constants.Fonts.bold, size: 35))
                     .padding()
                 Spacer()
                 VStack (alignment: .center) {
-                    Text("Selected date:")
+                    Text(Constants.Titles.selectedDate)
                         .font(.custom(Constants.Fonts.extraBold, size: 25))
                         .shadow(radius: 2)
-                    DatePicker("Selected Date", selection: $date, displayedComponents: .date)
+                    DatePicker(Constants.Titles.addExpense, selection: $date, displayedComponents: .date)
                         .shadow(radius: 5)
                         .labelsHidden()
                         .accentColor(Color(Constants.Colors.customLightBlue))
@@ -38,9 +37,9 @@ struct AddExpenseView: View {
                         .colorMultiply(Color(Constants.Colors.customOrange))
                         .background(Color(Constants.Colors.customLightBlue).opacity(0.6))
                         .cornerRadius(90)
-                }
+                } // vstack
                 TextField(value: $expenseAmount, format: .number) {
-                    Text("Enter Amount")
+                    Text(Constants.Titles.addExpense)
                 }
                 .keyboardType(.decimalPad)
                 .background(
@@ -52,6 +51,7 @@ struct AddExpenseView: View {
                 TextField("description", text: $description)
                     .background(
                         Color.white.cornerRadius(20, corners: .allCorners)
+                            .frame(height: 50)
                     )
                     .padding()
                 Picker("Category Picker", selection: $category) {
@@ -77,8 +77,8 @@ struct AddExpenseView: View {
                             .opacity(0.5)
                         )
                 } //button
-            }
-        } //vstack
+            } //vstack
+        } //zstack
     }
 }
 
