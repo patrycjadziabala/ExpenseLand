@@ -16,27 +16,31 @@ struct CategoriesCardView: View {
             TabView {
                 ForEach(viewModel.categoryCards, id: \.self) {
                     category in
-                    ZStack {
-                        Rectangle()
-                            .foregroundColor(.customLightYellow)
-                            .opacity(0.3)
-                        VStack (spacing: 15) {
-                            CategoryTitleView(categoryTitle: category.categoryName, categoryColor: Constants.Colors.customLightPink, categoryIcon: category.categoryIcon, categoryExpensesTotal: String(category.categoryExpenseTotalAmount))
-                            
-                            ProgressView(value: category.categoryExpenseTotalAmount, total: category.categoryAmount)
-                                .padding(.horizontal)
-                                .progressViewStyle(CustomProgressViewStyle(color:  Constants.Colors.customFadedGreen, colorString: Constants.Colors.customRed))
-                            HStack {
-                                Text(Constants.Titles.spent)
-                                Text(category.categoryExpenseTotalAmount as NSNumber, formatter: NumberFormatter.currency)
-                                Text(Constants.Titles.outOf)
-                                Text(category.categoryAmount as NSNumber, formatter: NumberFormatter.currency)
-                                Text(Constants.Titles.budget)
-                            } //hstack
-                            Text(String(category.categoryExpensesPercentage))
-                        } // vstack
-                    } //zstack
-                    .padding()
+                    VStack {
+                        CategoryTitleView(categoryTitle: category.categoryName, categoryColor: Constants.Colors.customLightPink, categoryIcon: category.categoryIcon, categoryExpensesTotal: category.categoryExpenseTotalAmount)
+                        
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(.customRed)
+                                .opacity(0.3)
+                            VStack (spacing: 15) {
+                                
+                                
+                                ProgressView(value: category.categoryExpenseTotalAmount, total: category.categoryAmount)
+                                    .padding(.horizontal)
+                                    .progressViewStyle(CustomProgressViewStyle(color:  Constants.Colors.customFadedGreen, colorString: Constants.Colors.customLightGreen))
+                                HStack {
+                                    Text(Constants.Titles.spent)
+                                    Text(category.categoryExpenseTotalAmount as NSNumber, formatter: NumberFormatter.currency)
+                                    Text(Constants.Titles.outOf)
+                                    Text(category.categoryAmount as NSNumber, formatter: NumberFormatter.currency)
+                                    Text(Constants.Titles.budget)
+                                } //hstack
+                                
+                            } // vstack
+                        } //zstack
+                        .padding()
+                    }
                 } //foreach
                 .sheet(item: $categoryPresented) { category in
                     Text(category.categoryName)
@@ -46,6 +50,8 @@ struct CategoriesCardView: View {
             .frame(height: 300)
             .padding()
         }
+        .padding()
+        .cornerRadius(30, corners: [.bottomLeft, .bottomRight])
     }
 }
 

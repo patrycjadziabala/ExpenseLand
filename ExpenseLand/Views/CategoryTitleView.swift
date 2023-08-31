@@ -12,11 +12,13 @@ struct CategoryTitleView: View {
     var categoryTitle: String
     var categoryColor: String
     var categoryIcon: String
-    var categoryExpensesTotal: String
+    var categoryExpensesTotal: Double
     
     var body: some View {
         ZStack {
-            Color(categoryColor)
+//            Color(categoryColor)
+            Rectangle()
+                .foregroundColor(.customLightPurple)
                 .opacity(0.4)
             HStack {
                 ZStack {
@@ -37,7 +39,7 @@ struct CategoryTitleView: View {
                         .font(.custom(Constants.Fonts.bold, size: 30))
                         .shadow(radius: 0.3)
                     HStack {
-                        Text(categoryExpensesTotal)
+                        Text(String(categoryExpensesTotal))
                             .font(.custom(Constants.Fonts.extraBold, size: 16))
                         Text("Spent this month")
                             .font(.custom(Constants.Fonts.regular, size: 16))
@@ -58,12 +60,13 @@ struct CategoryTitleView: View {
             } // hstack
         }
         .frame(height: 100)
+        .cornerRadius(30, corners: [.topLeft, .topRight])
         } //zstack
     }
 
 struct CategoryTitleView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryTitleView(categoryTitle: "Bills", categoryColor: "red", categoryIcon: "home.fill", categoryExpensesTotal: "400")
+        CategoryTitleView(categoryTitle: "Bills", categoryColor: "red", categoryIcon: "home.fill", categoryExpensesTotal: 10)
             .previewLayout(.sizeThatFits)
     }
 }
