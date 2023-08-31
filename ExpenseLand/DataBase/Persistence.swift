@@ -92,7 +92,8 @@ extension PersistenceController {
         do {
             let expense = try viewContext.fetch(request)
             for e in expense {
-                let expense = Expense(id: e.id ?? UUID(), expenseAmount: e.expenseAmount, expenseDate: e.expenseDate ?? Date(), expenseDescription: e.expenseDescription ?? "", expenseCategory: e.expenseCategory ?? "")
+                let icon = CategoryName(rawValue: e.expenseCategory?.capitalized ?? "")?.icon ?? ""
+                let expense = Expense(id: e.id ?? UUID(), expenseAmount: e.expenseAmount, expenseDate: e.expenseDate ?? Date(), expenseDescription: e.expenseDescription ?? "", expenseCategory: e.expenseCategory ?? "", expenseIcon: icon)
                 expenses.append(expense)
             }
         } catch {

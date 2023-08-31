@@ -24,10 +24,11 @@ struct Expense: Hashable, Identifiable {
     let expenseDate: Date
     let expenseDescription: String
     let expenseCategory: String
+    let expenseIcon: String
 
 }
 
-enum CategoryName: CaseIterable {
+enum CategoryName: String, CaseIterable {
     case Groceries
     case Bills
     case Transport

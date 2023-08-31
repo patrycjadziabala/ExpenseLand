@@ -13,7 +13,7 @@ struct ExpenseRowView: View {
     let expenseCategory: String
     let expenseDate: Date
     let amount: Double
-//    let icon: String
+    let icon: String
     
     var body: some View {
      
@@ -22,7 +22,7 @@ struct ExpenseRowView: View {
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
                         .fill(Color.cyan.opacity(0.6))
                         .frame(width: 40, height: 40)
-//                    Image(systemName: icon)
+                    Image(systemName: icon)
                 } //zstack
                 VStack(alignment: .leading, spacing: 6) {
                     Text(expenseDescription)
@@ -43,6 +43,6 @@ struct ExpenseRowView: View {
 
 struct ExpenseRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpenseRowView(expenseDescription: "Apple", expenseCategory: "Groceries", expenseDate: Date(), amount: 5)
+        ExpenseRowView(expenseDescription: "Apple", expenseCategory: "Groceries", expenseDate: Date(), amount: 5, icon: "")
     }
 }

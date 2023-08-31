@@ -15,7 +15,7 @@ struct RecentExpensesView: View {
         
         ForEach(viewModel.expensesShortlist, id: \.id) {
             expense in
-            ExpenseRowView(expenseDescription: expense.expenseDescription, expenseCategory: expense.expenseCategory.capitalized, expenseDate: expense.expenseDate, amount: expense.expenseAmount)
+            ExpenseRowView(expenseDescription: expense.expenseDescription, expenseCategory: expense.expenseCategory.capitalized, expenseDate: expense.expenseDate, amount: expense.expenseAmount, icon: expense.expenseIcon)
             Divider()
         }
         .padding(.horizontal)
