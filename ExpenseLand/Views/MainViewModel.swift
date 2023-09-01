@@ -139,4 +139,8 @@ final class MainViewModel: ObservableObject {
         let budgetLeft = (Double(totalBudget) ?? 0) - (Double(totalExpenses) ?? 0)
         totalBudgetLeft = String(budgetLeft)
     }
+    
+    func deleteExpense(at index: Int) {
+        // delete from database
+    }
 }
