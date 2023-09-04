@@ -23,7 +23,7 @@ struct RecentExpensesView: View {
         List {
             ForEach(viewModel.expensesShortlist, id: \.id) {
                 expense in
-                ExpenseRowView(expenseDescription: expense.expenseDescription, expenseCategory: expense.expenseCategory.capitalized, expenseDate: expense.expenseDate, amount: expense.expenseAmount, icon: expense.expenseIcon)
+                ExpenseRowView(expenseDescription: expense.expenseDescription, expenseCategory: expense.expenseCategory.capitalized, expenseDate: expense.expenseDate, amount: expense.expenseAmount, icon: expense.expenseIcon, color: expense.expenseColor)
             }
             .onDelete(perform: removeRows(at:))
         }

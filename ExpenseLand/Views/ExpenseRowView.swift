@@ -14,13 +14,15 @@ struct ExpenseRowView: View {
     let expenseDate: Date
     let amount: Double
     let icon: String
+    let color: String
     
     var body: some View {
      
             HStack (spacing: 20) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .fill(Color.cyan.opacity(0.6))
+                        .fill(Color(color))
+//                        .fill(Color.cyan.opacity(0.6))
                         .frame(width: 40, height: 40)
                     Image(systemName: icon)
                 } //zstack
@@ -43,6 +45,6 @@ struct ExpenseRowView: View {
 
 struct ExpenseRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpenseRowView(expenseDescription: "Apple", expenseCategory: "Groceries", expenseDate: Date(), amount: 5, icon: "")
+        ExpenseRowView(expenseDescription: "Apple", expenseCategory: "Groceries", expenseDate: Date(), amount: 5, icon: "", color: "red")
     }
 }

@@ -26,7 +26,7 @@ struct CategoriesCardView: View {
                             VStack (spacing: 5) {
                                 Spacer()
                                 ProgressView(value: category.categoryExpenseTotalAmount, total: category.categoryAmount)
-                                    .progressViewStyle(CustomProgressViewStyle(color:  category.categoryColor, colorString: category.categoryColor))
+                                    .progressViewStyle(CustomProgressViewStyle(colorString: category.categoryColor))
                                     .padding()
                                 HStack {
                                     Text(Constants.Titles.spent)

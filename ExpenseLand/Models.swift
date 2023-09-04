@@ -25,7 +25,7 @@ struct Expense: Hashable, Identifiable {
     let expenseDescription: String
     let expenseCategory: String
     let expenseIcon: String
-
+    let expenseColor: String
 }
 
 enum CategoryName: String, CaseIterable {
