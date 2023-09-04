@@ -21,12 +21,12 @@ struct CategoriesCardView: View {
                         
                         ZStack {
                             Rectangle()
-                                .foregroundColor(.customRed)
-                                .opacity(0.3)
+                                .foregroundColor(Color(category.categoryColor))
+                                .opacity(0.15)
                             VStack (spacing: 5) {
                                 Spacer()
                                 ProgressView(value: category.categoryExpenseTotalAmount, total: category.categoryAmount)
-                                    .progressViewStyle(CustomProgressViewStyle(color:  Constants.Colors.customFadedGreen, colorString: Constants.Colors.customLightGreen))
+                                    .progressViewStyle(CustomProgressViewStyle(color:  category.categoryColor, colorString: category.categoryColor))
                                     .padding()
                                 HStack {
                                     Text(Constants.Titles.spent)

@@ -29,7 +29,6 @@ struct RecentExpensesView: View {
         }
         .frame(height: 300)
         .padding(.horizontal)
-       
     }
 }
 

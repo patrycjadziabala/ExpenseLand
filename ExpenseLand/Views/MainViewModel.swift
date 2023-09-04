@@ -142,5 +142,6 @@ final class MainViewModel: ObservableObject {
     
     func deleteExpense(at index: Int) {
         // delete from database
+        
     }
 }

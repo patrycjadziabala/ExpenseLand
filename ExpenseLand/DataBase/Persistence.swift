@@ -127,3 +127,13 @@ extension PersistenceController {
     }
 }
 
+//MARK: - Delete
+
+extension PersistenceController {
+    func removeExpenseFromDatabase() {
+        fetchExpenses()
+        
+    }
+}
+
+
