@@ -24,8 +24,8 @@ struct CategoryTitleView: View {
                 ZStack {
                     Circle()
                         .foregroundColor(.white)
-                        .frame(height: 60)
-                        .scaledToFit()
+                        .scaledToFill()
+                        .frame(height: 50)
                     Image(systemName: categoryIcon)
                         .resizable()
                         .scaledToFit()

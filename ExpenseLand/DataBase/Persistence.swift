@@ -107,7 +107,7 @@ extension PersistenceController {
         let request = NSFetchRequest<DBCategory>(entityName: "DBCategory")
         request.predicate = NSPredicate(format: "name LIKE %@", categoryName)
         
-        do {
+        do { 
             let category = try viewContext.fetch(request)
             return category
         } catch {
